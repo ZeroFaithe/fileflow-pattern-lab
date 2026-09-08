@@ -20,7 +20,7 @@
     $path = $directory . '/' . $baseName . '.'
     . $exporter->getExtension();
 
-    file_put_contents($path, $records);
+    file_put_contents($path, $exporter->export($records));
 
     return $path;
     }
