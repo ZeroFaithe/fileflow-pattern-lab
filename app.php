@@ -4,6 +4,7 @@
     use App\Config\AppSettings;
     use App\Factory\TextExporterCreator;
     use App\Factory\JsonExporterCreator;
+    use App\Factory\CsvExporterCreator;
 
     $records = array(
         array('id' => 101, 'service' => 'Laptop check', 'status' => 'Done'),
@@ -18,6 +19,9 @@
     }
     else if ($format == 'json'){
         $creator = new JsonExporterCreator();
+    }
+    else if ($format == 'csv'){
+        $creator = new CsvExporterCreator();
     }
     else{
         echo 'Use txt or json.' . PHP_EOL;
